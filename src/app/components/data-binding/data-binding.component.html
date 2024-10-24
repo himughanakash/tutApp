@@ -1,0 +1,35 @@
+<div class="row" style="margin: 20px;">
+    <div class="col-3" style="margin-bottom: 15px;">
+        Interpolation
+        <div class="row-3" style="margin-top: 10px;">
+            <div class="col-4 bg-success" style="margin-bottom: 10px;">
+                {{courseName}}
+                {{currentDate}}
+            </div>
+        </div>
+    </div>
+    <div class="col-3" style="margin-bottom: 15px;">
+        <input type="text" value="{{courseName}}" placeholder="Enter your text" style="margin-top: 10px;">
+    </div>
+    <div class="col-3" style="margin-bottom: 15px;">
+        <!-- Additional content can go here -->
+         <input type="{{inputType}}" value="">
+    </div>
+    <div class="col-3">
+        Property Binding
+        <div [class]="className">Danger hai</div>
+        <input type="text" [value]="courseName">
+    </div>
+
+    <div class="col-3">
+        <button class="btn btn-success" (click)="showAlert('Welcome to the tutorial of Angular 18')">Show welcome</button>
+        <button class="btn btn-primary" (click)="changeCourseName()">Change Course Name</button>
+    </div>
+
+    <div class="col-3">
+        <input type="text" [(ngModel)] ="courseName"> - {{courseName}}
+    </div>
+    <div class="col-3">
+        <h2>{{firstName()}}</h2>
+    </div>
+</div>
