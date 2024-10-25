@@ -1,0 +1,92 @@
+<div class="container pt-3">
+  <div class="row">
+    <div class="col-3">
+      <div *ngIf="isDiv1visible" class="bg-danger p-3 text-center">
+        <h1>Div 1</h1>
+      </div>
+    </div>
+    <div class="col-3">
+      <div *ngIf="isDiv2visible" class="bg-danger p-3 text-center">
+        <h1>Div 2</h1>
+      </div>
+    </div>
+    <div class="col-3">
+      <div *ngIf="num1 == num2" class="bg-danger p-3 text-center">
+        <h1>Div 3</h1>
+      </div>
+    </div>
+    <div class="col-3">
+      <div *ngIf="isActive" class="bg-danger p-3 text-center">
+        <h1>Div 4</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="row pt-3">
+    <div class="col-3 text-center">
+      <button class="btn btn-danger" (click)="hideDiv1()">Hide Div 1</button>
+      <button class="btn btn-primary mx-2" (click)="showDiv1()">Show Div 1</button>
+    </div>
+    <div class="col-3 text-center">
+      <button class="btn btn-danger" (click)="toggleDiv2()">Toggle Div 2</button>
+    </div>
+    <div class="col-3 text-center">
+      <input type="number" [(ngModel)]="num1" placeholder="Num 1" class="form-control mb-2">
+      <input type="number" [(ngModel)]="num2" placeholder="Num 2" class="form-control">
+    </div>
+    <div class="col-3 text-center">
+      <input [(ngModel)]="isActive" type="checkbox" class="width-50">
+      <label>Active</label>
+    </div>
+  </div>
+
+  <div class="row pt-3">
+    <div class="col-12">
+      <h3>City Names</h3>
+      <ul class="list-group">
+        <li *ngFor="let city of cityNameArray" class="list-group-item">
+          {{ city }}
+        </li>
+      </ul>
+    </div>
+    <div class="col-12">
+      <select>
+        <option *ngFor="let cityOptions of cityNameArray">
+          {{cityOptions}}
+        </option>
+      </select>
+    </div>
+    <div class="col-12">
+      <select>
+        <option *ngFor="let student of studentList" [value]="student.studId">
+          {{student.name}}
+        </option>
+      </select>
+    </div>
+  </div>
+</div>
+<div class="row pt-3">
+  <div class="col-5">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Sr No</th>
+          <th>Name</th>
+          <th>City</th>
+          <th>Status</th>  
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let stud of studentList let srNo = index">
+          <td>{{srNo+1}}</td>
+          <td>{{stud.name}}</td>
+          <td>{{stud.city}}</td>
+          <td>
+            <span *ngIf="stud.isActive">Active</span>
+            <span *ngIf="!stud.isActive">Inactive</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
