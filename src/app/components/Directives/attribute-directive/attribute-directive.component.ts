@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -26,9 +27,14 @@ export class AttributeDirectiveComponent implements OnInit {
       this.isDiv2Active = true;
     }
   }
-  constructor() { }
+  constructor(private router: Router) {
 
+   }
+   // for routing using ts
+
+   navigateToStructural(){
+    this.router.navigateByUrl("structural-dir")
+   }
   ngOnInit() {
   }
-
 }
