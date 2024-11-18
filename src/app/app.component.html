@@ -20,9 +20,15 @@
     </div>
   </nav>
 
-  <div>
-    <app-getApi></app-getApi>
+  <div class="col-3">
+    <div class="row">
+      <app-getApi></app-getApi>
+    </div>
+    <div class="row">
+      <app-postApi></app-postApi>
+    </div>
   </div>
+
   <div class="container">
     <!-- it's a directive responsible to render activated route component -->
     <router-outlet>

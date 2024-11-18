@@ -1,0 +1,45 @@
+<div class="container">
+  <h2>Submit Your Information</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        id="name"
+        class="form-control"
+        [(ngModel)]="name"
+        name="name"
+        required
+        placeholder="Enter your name"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        class="form-control"
+        [(ngModel)]="email"
+        name="email"
+        required
+        placeholder="Enter your email"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input
+        type="tel"
+        id="phone"
+        class="form-control"
+        [(ngModel)]="phone"
+        name="phone"
+        required
+        placeholder="Enter your phone number"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
